@@ -1,0 +1,14 @@
+version: 2
+
+models: 
+- name: employee
+  description: "dbt for employee table"
+
+sources:
+- name: employee
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+  - name: EMPLOYEE_RAW
+
+  
