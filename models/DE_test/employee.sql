@@ -1,24 +1,22 @@
-{{
-    config(
-        materialized = 'table'
-        )
-}}
+{{ config(materialized="table") }}
 
-with EMPLOYEE as (
-    select
-        employee_id as Employee_id,
-        first_name as First_name,
-        last_name as Last_name,
-        CONCAT(first_name, ' ', last_name) as FULL_NAME,
-        department as Department,
-        salary as Salary, 
-        hire_date as Hire_date,
-        YEAR(hire_date) as YEAR,
-        MONTH(hire_date) as MONTH,
-        DAY(hire_date) as DAY,
-        location as Location,
-        split_part(location, '-', 2) as COUNTRY,
-        split_part(location, '-', 1) as CITY
-    from DBT_DB.PUBLIC.EMPLOYEE
-)
-select * from EMPLOYEE
+with
+    employee_raw as (
+        select
+            employee_id as employee_id,
+            first_name as first_name,
+            last_name as last_name,
+            concat(first_name, ' ', last_name) as full_name,
+            department as department,
+            salary as salary,
+            hire_date as hire_date,
+            year(hire_date) as year,
+            month(hire_date) as month,
+            day(hire_date) as day,
+            location as location,
+            split_part(location, '-', 2) as country,
+            split_part(location, '-', 1) as city
+        from {{ source("employee", "EMPLOYEE_RAW") }}  -- DBT_DB.PUBLIC.EMPLOYEE_RAW
+    )
+select *
+from employee_raw
