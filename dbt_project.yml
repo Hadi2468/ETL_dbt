@@ -43,17 +43,9 @@ models:
 
   dbt_funamental:
     staging:
-      jaffle_shop:
-        +materialized: table
-      
-      stripe:
-        +materialized: table
+        +materialized: view
     
     marts:
-      finane:
-        +materialized: table
-      
-      marketing:
         +materialized: table
 
 

@@ -3,4 +3,4 @@ select
     first_name,
     last_name
 
-from DBT_DB.JAFFLE_SHOP.JAFFLE_SHOP_CUSTOMERS
+from {{ source("jaffle_shop", "JAFFLE_SHOP_CUSTOMERS") }} -- DBT_DB.JAFFLE_SHOP.JAFFLE_SHOP_CUSTOMERS

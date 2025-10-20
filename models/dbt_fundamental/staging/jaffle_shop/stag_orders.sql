@@ -4,4 +4,4 @@ select
     order_date,
     status
 
-from DBT_DB.JAFFLE_SHOP.JAFFLE_SHOP_ORDERS
+from {{ source("jaffle_shop", "JAFFLE_SHOP_ORDERS") }} -- DBT_DB.JAFFLE_SHOP.JAFFLE_SHOP_ORDERS

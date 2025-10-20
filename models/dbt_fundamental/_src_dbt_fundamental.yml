@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: DBT_DB  
+    schema: JAFFLE_SHOP  
+    tables:
+      - name: JAFFLE_SHOP_CUSTOMERS
+      - name: JAFFLE_SHOP_ORDERS
+      - name: STRIPE_PAYMENTS
