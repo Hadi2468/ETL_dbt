@@ -3,6 +3,6 @@ select
     ORDERID as order_id,
     PAYMENTMETHOD as payment_method,
     STATUS as status,
-    AMOUNT as amount,
+    AMOUNT / 100 as amount,
     CREATED as created_date
-from DBT_DB.JAFFLE_SHOP.JAFFLE_SHOP_PAYMENTS
+from DBT_DB.JAFFLE_SHOP.STRIPE_PAYMENTS
