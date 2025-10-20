@@ -5,4 +5,4 @@ select
     STATUS as status,
     AMOUNT / 100 as amount,
     CREATED as created_date
-from DBT_DB.JAFFLE_SHOP.STRIPE_PAYMENTS
+from {{ source("jaffle_shop", "STRIPE_PAYMENTS") }}  -- DBT_DB.JAFFLE_SHOP.STRIPE_PAYMENTS
