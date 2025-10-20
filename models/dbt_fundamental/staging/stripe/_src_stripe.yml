@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: DBT_DB  
+    schema: JAFFLE_SHOP  
+    tables:
+      - name: STRIPE_PAYMENTS
+        config:
+          loaded_at_field: _batched_at
+          freshness:
+            warn_after: {count: 1, period: minute}
+            error_after: {count: 24, period: minute}
