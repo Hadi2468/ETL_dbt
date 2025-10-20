@@ -8,4 +8,4 @@ select
     department,
     sum(salary) as total_salary
 from employee
-groupBy department
+group By department
