@@ -7,4 +7,10 @@ sources:
   tables:
   - name: EMPLOYEE_RAW
 
+- name: customer
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+  - name: CUSTOMER_SRC
+
   
