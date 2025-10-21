@@ -22,4 +22,7 @@ models:
               arguments:
                 to: ref('employee')
                 field: department
+      - name: totalsalary
+        data_tests:
+          - check_value
       
