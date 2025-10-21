@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stage_customers
+    columns:
+      - name: customer_id
+        data_tests:
+          - unique
+          - not_null
+
+  - name: stage_orders
+    columns:
+      - name: order_id
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        data_tests:
+          - relationships:
+              field: stage_customers
+              to: ref('customer_id')
+      - name: status
+        data_tests:
+          - accepted_values:
+              values:
+                - completed
+                - returned
+                - return_pending
+                - shipped
+                - placed
