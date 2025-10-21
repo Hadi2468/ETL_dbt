@@ -6,6 +6,6 @@ with employee as (
 
 select
     department,
-    sum(salary) as total_salary
+    sum(salary) as totalsalary
 from employee
 group By department
