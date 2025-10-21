@@ -20,6 +20,7 @@ models:
               field: stage_customers
               to: ref('customer_id')
       - name: status
+        description: "{{ doc('order_status') }}"
         data_tests:
           - accepted_values:
               values:
