@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: employee
+    description: "dbt for employee table"
+    columns:
+      - name: employee_id
+        data_tests:
+          - unique
+          - not_null
+      - name: department
+        data_tests:
+          - accepted_values:
+                values: ['HR', 'Engineering', 'Marketing', 'Sales']
+
+  - name: total_salary
+    description: "ETL job on the employee table"
+    columns:
+      - name: department
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('employee')
+                field: department
+      

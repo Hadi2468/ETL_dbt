@@ -7,4 +7,3 @@ sources:
     tables:
       - name: JAFFLE_SHOP_CUSTOMERS
       - name: JAFFLE_SHOP_ORDERS
-      - name: STRIPE_PAYMENTS
