@@ -36,4 +36,8 @@ sources:
   tables:
     - name: PURCHASE_SRC
 
-  
+- name: orders
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+    - name: BASE_ORDERS
