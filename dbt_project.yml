@@ -43,7 +43,7 @@ models:
 
   dbt_funamental:
     staging:
-        +materialized: view
+        +materialized: table
     
     marts:
         +materialized: table
