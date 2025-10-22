@@ -2,15 +2,24 @@ version: 2
 
 sources:
 - name: employee
+  description: "DBT Model for the customer table"
   database: DBT_DB
   schema: PUBLIC
   tables:
   - name: EMPLOYEE_RAW
 
 - name: customer
+  description: "DBT model for the customer view"
   database: DBT_DB
   schema: PUBLIC
   tables:
   - name: CUSTOMER_SRC
+
+- name: sales
+  description: :DBT Model for the sales table"
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+  - name: SALES_SRC
 
   
