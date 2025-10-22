@@ -16,10 +16,24 @@ sources:
   - name: CUSTOMER_SRC
 
 - name: sales
-  description: :DBT Model for the sales table"
+  description: "DBT Model for the sales table"
   database: DBT_DB
   schema: PUBLIC
   tables:
   - name: SALES_SRC
+
+- name: product
+  description: "DBT Model for the product table"
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+    - name: PRODUCT_SRC
+  
+- name: purchase
+  description: "DBT Model for the purchase table"
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+    - name: PURCHASE_SRC
 
   
