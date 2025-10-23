@@ -8,3 +8,12 @@ macros:
         - name: decimal
           type: integer
           description: number of decimal places, default to 2
+    - name: grant_select
+      description: A macro that we want grant to privs to target.schema and target.role
+      arguments:
+        - name: schema
+           type: string
+          description: The schema that we want grant to privs to, by default is our target schema
+        - name: role
+          type: string
+          description: The role that we want grant to privs to, by default is our target role
