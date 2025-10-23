@@ -48,3 +48,10 @@ sources:
   schema: PUBLIC
   tables:
     - name: PATIENT_SRC
+
+- name: country
+  description: "DBT Model for session table"
+  database: DBT_DB
+  schema: PUBLIC
+  tables:
+    - name: SESSION_SRC
